@@ -27,13 +27,20 @@
 //not logical operator (!)
 
 let temp = 15;
-
+let sunny = true;
 
 // here we are checking if the temperature is not greater than zero by using the not logical operator
 // we put the expression in a pair of curley braces ()
 
-if(!(temp > 0)){
-  console.log("it's warn outside")
+// if(!(temp > 0)){
+//   console.log("it's warn outside")
+// } else{
+//   console.log("it's cold outside");
+// }
+
+if(!sunny){
+  console.log("It's sunny outside")
 } else{
-  console.log("it's cold outside");
+  console.log("It's cloudy outside")
 }
+
