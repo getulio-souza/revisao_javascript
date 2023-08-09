@@ -1,83 +1,66 @@
 // tornar algo assincrono em sincrono
 
-//uma Promise é um objeto usado para processo assincrono para um valor que pode estar disponivel agora ou no futuro
+//uma Promise é um objeto usado para processamento assincrono
+//para um valor que pode estar disponivel agora ou no futuro
 
-//uma Promise tem três estados: fullfield, reject e
+//uma Promise tem três estados: pending(estado inicial), fullfield e reject (estados finais)
 
-// function contador1(n) {
-//   let cont = 0;
-//   for (let i = 0; i < n; i++) {
-//     contador1++;
-//   }
-// }
+function contador(n) {
+  let cont = 0
 
-// function contador2(n) {
-//   let contador = 0;
-//   let t = setTimeout(() => {
-//     for (let i = 0; i < n; i++) {
-//       contador++;
-//     }
-//   }, 2000);
-//   return contador;
-// }
+  for (let i = 0; i < n; i++){
+    cont++
+  }
+  return cont
+}
 
-// function contarP(n) {
-//   let cont = 0;
-//   let p = new Promise((resolve, rejected) => {
-//     for (let i = 0; i < n; i++) {
-//       cont++;
-//     }
-//     if (cont == n) {
-//       resolve(cont, 'deu certo');
-//     } else {
-//       rejected("houve um erro. Tente novamente mais tarde.");
-//     }
-//   });
-//   return p;
-// }
-// console.log(contarP(10));
-// contarP()
-//   //se deu certo 
-//   .then(sucess => console.log('sucess' + sucess))
-//   //se deu erro
-//   .catch(error => console.log(error))
+function contadorT(n) {
+  let cont = 0
+  let t = setTimeout(() => {
+    for (let i = 0; i < n; i++){
+      cont++
+    }
+  }, 2000)
+  return cont
+}
 
-// console.log(contador1(1000));
-// console.log(contador2(10));
+//uma promisse criada
 
+function contadorP(n) {
+  let cont = 0
+  let p = new Promise((resolve, reject) => {
+    for (let i = 0; i < n; i++){
+      cont ++
+    }
+    //testando o resolve e reject
+    if (cont == n) {
+      resolve(cont)
+    } else {
+      reject('erro')
+    }
+  })
+  return p
+}
 
-// function somaPositivos (n1, n2){
-//   let p = new Promise((res, rej)=> {
-//     if( n1 >= 0 && n2>= 0){
-//       res(n1+n2)
-//     }
-//     else{
-//       rej('erro')
-//     }
-//   })
-//   return p;
-// }
+function somaPositivos(n1, n2) {
+  let novaSoma = new Promisse((resolve, reject) => {
+    if (n1 >= 0 && n2 >= 0) {
+      resolve(n1 + n2)
+    } else {
+      reject('Houve um erro. Ambos os numeros devem ser positivos')
+    }
+  })
+  return novaSoma
+}
 
-// somaPositivos(1,1)
-// .then(sucess => console.log('sucess ' + sucess))
-// .catch(error => console.log(error))
+somaPositivos(-4, 5)
+  .then(sucess => console.log(' resolvida com sucesso'))
+  .catch (erro => console.log('Houve um erro. Ambos os numeros devem ser positivos'))
 
-const myPromise = new Promise ((res, rej)=> {
-  setTimeout (()=> rej('resolvida'), 2000)
-})
+// contadorP(10)
+//   .then(sucess => console.log('sucess'))
+//   .catch(err => console.log(err))
 
-myPromise
-.then((res)=> console.log(`ok, a sua promise foi ${res}`))
-.catch((rej)=> console.log(`erro, a sua promisse foi ${rej}`))
-
-
-
-// const p = new Promise ((resolve, reject)=> {
-//   try{
-//     resolve(funcaox())
-//   } catch (e){
-//     reject(e)
-//   }
-// })
-
-//https://medium.com/trainingcenter/entendendo-promises-de-uma-vez-por-todas-32442ec725c2
+// console.log(contadorP(10));
+// console.log(contador(10))
+// console.log(contadorT(10))

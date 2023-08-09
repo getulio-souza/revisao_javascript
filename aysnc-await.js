@@ -1,69 +1,80 @@
-//synchronous
-// console.log("I");
-// console.log("eat");
-// console.log("with a");
-// console.log("spoon");
+// import fs from 'fs';
 
-//javascript runs from the top to the bottom of the page
+// // synchronous
+// // console.log("I");
+// // console.log("eat");
+// // console.log("with a");
+// // console.log("spoon");
 
-//asynchronous
+// //javascript runs from the top to the bottom of the page
 
-//settimeout allows you to run a fuction after a specific amount of time
+// //asynchronous
 
-// setTimeout(()=> {
-//   console.log("ice cream");
-// }, 4000)
+// //settimeout allows you to run a fuction after a specific amount of time
 
-//call a function inside another function === call back function
+// // setTimeout(()=> {
+// //   console.log("ice cream");
+// // }, 4000)
 
-// function one (call_two){
-//   console.log('step 1 complete, please call step 2')
+// //call a function inside another function === call back function
 
-//   call_two()
+// // function one (call_two){
+// //   console.log('step 1 complete, please call step 2')
 
-// };
+// //   call_two()
 
-// function two (){
-//   console.log('step 2')
-// };
+// // };
 
-// one(two);
+// // function two (){
+// //   console.log('step 2')
+// // };
 
-//flow of a synscronns function
+// // one(two);
 
-//store the ingredients
+// //flow of a synscronns function
 
-let stocks = {
-  fruits: ["strawberry", "banana", "grapes", "apple"],
+// //store the ingredients
 
-  liquid: ["water", "ice"],
+// // let stocks = {
+// //   fruits: ["strawberry", "banana", "grapes", "apple"],
 
-  holder: ["cone", "cup", "stick"],
+// //   liquid: ["water", "ice"],
 
-  toppings: ["chocolate", "peanuts"],
-};
+// //   holder: ["cone", "cup", "stick"],
 
-stocks.fruits[2];
+// //   toppings: ["chocolate", "peanuts"],
+// // };
 
-// console.log(stocks.fruits[1]);
+// // stocks.fruits[2];
 
-let order = (fruit_name, call_production) => {
-  console.log("order placed, please call production");
+// // // console.log(stocks.fruits[1]);
 
-  setTimeout(() => {
-    console.log(`${stocks.fruits[fruit_name]} was selected`);
-  }, 2000);
+// // let order = (fruit_name, call_production) => {
+// //   console.log("order placed, please call production");
 
-  call_production();
-};
+// //   setTimeout(() => {
+// //     console.log(`${stocks.fruits[fruit_name]} was selected`);
+// //   }, 2000);
 
-order(0, production);
+// //   call_production();
+// // };
 
-let production = () => {
+// // order(0, production);
 
-  setTimeout(()=> {
-    console.log("production has started");
-  },2000)
+// // let production = () => {
 
-  console.log("order received, starting production");
-};
+// //   setTimeout(()=> {
+// //     console.log("production has started");
+// //   },2000)
+
+// //   console.log("order received, starting production");
+// // };
+
+
+// const fs = require('fs');
+
+// console.log(1)
+// console.log(2)
+// console.log(3)
+
+
